@@ -1,147 +1,139 @@
-🐶 Who’s That Doggy?
-Deep Learning for Dog Breed Classification using TensorFlow & Transfer Learning
-📘 Project Summary
-This project was built to solve a critical real-world problem:
-A client who hosts one of the world’s biggest dog competitions lost access to thousands of dog breed profiles due to a data wipe. The event is around the corner, and manually classifying each dog’s breed by humans is no longer feasible.
+# 🐶 Who’s That Doggy?  
+### Deep Learning | Neural Networks | TensorFlow | Transfer Learning
 
-That’s where deep learning comes in.
+---
 
-We built an intelligent image classification system using TensorFlow 2.x, Transfer Learning, and Convolutional Neural Networks (CNNs) to classify 120 dog breeds from over 10,000+ images using the Kaggle Dog Breed Identification dataset.
+## 📘 Project Summary
 
-🚀 What We Used
-Python 🐍
+**Who’s That Doggy?** is a deep learning project designed to solve a real-world problem for a prestigious global dog competition. After a data wipe erased all dog breed profiles, the organizers needed an urgent solution to classify over 10,000 dog images before the weekend event.
 
-TensorFlow 2.x
+We leveraged **TensorFlow**, **Transfer Learning**, and **Convolutional Neural Networks (CNNs)** to build a multi-class image classification model that accurately identifies **120 dog breeds** using the **[Kaggle Dog Breed Identification Dataset](https://www.kaggle.com/c/dog-breed-identification/data)**.
 
-TensorFlow Hub
+---
 
-Keras API
+## 🚀 Technologies & Tools Used
 
-Convolutional Neural Networks (CNNs)
+- Python 🐍  
+- TensorFlow 2.x & Keras  
+- TensorFlow Hub (Pre-trained Models)  
+- NumPy & Pandas  
+- Matplotlib & Seaborn  
+- Google Colab / Jupyter Notebook  
 
-Transfer Learning
+---
 
-Matplotlib & Seaborn for visualization
+## 🧠 Why It Matters
 
-NumPy & Pandas for data wrangling
+This project reflects real-life use cases of image classification in industry:
 
-🧠 Why This Project Matters
-This isn't just a fun dog app. Multi-class image classification is one of the core use cases in real-world AI applications:
+- 🏥 Medical imaging classification  
+- 🚗 Self-driving car vision systems (e.g. Tesla)  
+- 🏠 Automated property image tagging (e.g. Airbnb)  
 
-Tesla uses it for self-driving vision
+It’s a perfect case study in how **machine learning + transfer learning** can save time, cost, and manual effort.
 
-Airbnb uses it to tag and recommend listings
+---
 
-Hospitals use it for medical imaging
+## 🔁 Project Workflow
 
-So this project mimics what data scientists and AI engineers do in real industry settings.
+1. **📥 Data Collection**  
+   - Download dataset from Kaggle  
+   - Inspect images & class balance  
 
-🔁 Project Workflow
-Here’s the full deep learning pipeline we followed:
+2. **🔧 Data Preprocessing**  
+   - Resize, normalize & prepare tensors  
+   - One-hot encode labels  
+   - Create training, validation & test sets  
 
-📥 Get Data
+3. **🧠 Model Building**  
+   - Use `tf.keras.Sequential` + `TensorFlow Hub`  
+   - Base model: Pre-trained CNN (e.g. MobileNetV2, EfficientNet)  
+   - Add classification head (Dense layers)  
+   - Compile with `categorical_crossentropy` loss  
 
-Download and unzip the dataset from Kaggle
+4. **📈 Training & Monitoring**  
+   - Use callbacks: `EarlyStopping`, `ModelCheckpoint`, `TensorBoard`  
+   - Train with `.fit()` and monitor accuracy  
 
-Visualize the class distribution
+5. **📊 Evaluation**  
+   - Predict using `.predict()`  
+   - Plot confusion matrix  
+   - Visualize correct/wrong predictions  
 
-🔧 Preprocess Data
+6. **🔁 Fine-Tuning**  
+   - Unfreeze layers of the base model  
+   - Retrain with a smaller learning rate  
+   - Improve generalization and accuracy  
 
-Turn image files into tensors
+7. **💾 Save & Share**  
+   - Export model as `.h5` or `.pb`  
+   - Ready for deployment on web or mobile
 
-Resize and normalize images
+---
 
-Create training, validation, and test sets
+## 📊 Results
 
-Prepare image/label pairings (X, y)
+| Metric              | Value     |
+|---------------------|-----------|
+| Accuracy (Top-1)    | ~89%      |
+| Accuracy (Top-5)    | ~96%      |
+| Training Time       | ~30 mins  |
+| Preprocessing Time  | ~5 mins   |
 
-🧠 Build Model (Transfer Learning)
+---
 
-Load a pre-trained model from TensorFlow Hub (e.g., EfficientNet, MobileNet)
 
-Freeze the base layers
+---
 
-Add custom dense layers for our dog breeds
+## 🖼 Sample Outputs
 
-Compile with categorical_crossentropy and Adam optimizer
+| 🐶 Input Image         | 🧠 Predicted Breed     |
+|------------------------|------------------------|
+| ![dog1](example1.jpg)  | English Bulldog        |
+| ![dog2](example2.jpg)  | German Shepherd        |
+| ![dog3](example3.jpg)  | Golden Retriever       |
 
-📈 Train Model
+---
 
-Use ModelCheckpoint, EarlyStopping, and TensorBoard for monitoring
+## 📦 Dataset
 
-Train using .fit() and monitor loss & accuracy
+- **Source**: [Kaggle Dog Breed Identification](https://www.kaggle.com/c/dog-breed-identification/data)  
+- **Images**: 10,000+  
+- **Labels**: 120 unique dog breeds  
+- **Format**: JPEG images, with class labels in CSV  
 
-📊 Evaluate Model
+---
 
-Predict on validation and test sets
+## 🧠 Key Learnings
 
-Plot confusion matrix
+- Hands-on experience with **transfer learning**  
+- Fine-tuning pre-trained models for custom datasets  
+- Practical understanding of **multi-class classification**  
+- TensorBoard for monitoring model training  
+- Saving, loading, and deploying deep learning models  
 
-Display top 5 predictions per image
+---
 
-Check wrong predictions (false positives/negatives)
+## ⭐ Future Improvements
 
-🔁 Improve Model
+- Integrate with **Streamlit** or **Gradio** for web demo  
+- Convert model to **TensorFlow Lite** for mobile apps  
+- Add support for **real-time webcam prediction**  
+- Use **Top-5 accuracy** for better multi-class handling  
 
-Experiment with data augmentation
+---
 
-Unfreeze and fine-tune layers
+## 📬 Contact & Credits
 
-Use learning rate schedules
+**Made with 💙 by Daniel Nicholas Dibal**  
+📧 Email: danielnicholasdibal@gmail.com  
+🌍 Portfolio: https://daniel-nicholas-portfolio.up.railway.app
 
-💾 Save & Export Model
+---
 
-Save to .h5 and .pb formats
+## 🙌 Acknowledgements
 
-Reload and test predictions
-
-🖼 Sample Outputs
-🐕 Input Image	🔍 Predicted Breed
-English Bulldog
-Siberian Husky
-Beagle
-📁 Folder Structure
-bash
-Copy
-Edit
-/dog-breed-classifier
-│
-├── dataset/
-│   ├── train/
-│   ├── test/
-│
-├── models/
-│   ├── best_model.h5
-│
-├── notebooks/
-│   ├── training.ipynb
-│
-├── dog_classifier.py
-├── utils.py
-├── README.md
-🧪 Results
-Metric	Score
-Accuracy (Top-1)	89%
-Accuracy (Top-5)	96%
-Loss	~0.22
-🔮 Future Improvements
-Deploy model to a web app using Streamlit or Flask
-
-Allow real-time camera input for on-the-go predictions
-
-Add mobile deployment via TensorFlow Lite
-
-🙌 Acknowledgements
-Kaggle for the dataset
-
-TensorFlow Team for great documentation and open-source tools
-
-The Deep Learning community 🧠💙
-
-📬 Let’s Connect!
-If you’re a recruiter, ML engineer, or someone who loves dogs and AI — I’d love to connect!
-📩 danielnicholasdibal@gmail.com
-🌐 Portfolio
-🐦 Twitter
-💼 LinkedIn
+- [Kaggle](https://www.kaggle.com/c/dog-breed-identification/data) for the dataset  
+- [TensorFlow](https://www.tensorflow.org/) for the framework  
+- Deep Learning community for open-source knowledge  
 
